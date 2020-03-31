@@ -1,0 +1,6 @@
+.vagrant/
+tls.crt
+tls.key
+*.tfstate
+*.log
+*.swp
