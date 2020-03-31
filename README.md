@@ -15,7 +15,7 @@ vi Makefile
 make install
 ```
 
-### 3CX Configuration
+### 3CX Configuration and Setup
 
 ```
 ssh  USER@REMOTE_IP
