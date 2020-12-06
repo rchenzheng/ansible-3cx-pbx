@@ -18,7 +18,7 @@ make install
 ### 3CX Configuration and Setup
 
 ```
-ssh  USER@REMOTE_IP
+ssh  debian@REMOTE_IP
 
 sudo apt install 3cxpbx
 ```

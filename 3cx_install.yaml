@@ -4,4 +4,7 @@
   become: yes
 
   roles:
+    - ssh-access
     - 3cx-setup
+    - devsec.hardening.ssh_hardening
+
