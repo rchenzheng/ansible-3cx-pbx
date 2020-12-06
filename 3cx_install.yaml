@@ -8,3 +8,9 @@
     - 3cx-setup
     - devsec.hardening.ssh_hardening
 
+
+  tasks:
+  # It is required to install while in the terminal as it's an interactive installation
+  - name: HOW TO INSTALL & SETUP?
+    debug:
+      msg: "TO INSTALL and SETUP run `sudo apt install 3cxpbx`"
