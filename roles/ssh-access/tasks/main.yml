@@ -1,19 +1,19 @@
-- name: add debian user to sudoers
+- name: add {{ user }} user to sudoers
   user:
-    name: debian
+    name: "{{ user }}"
     group: sudo
     create_home: yes
     append: yes
     shell: /bin/bash
 
-- name: allow debian to sudo
+- name: allow {{ user }} to sudo
   lineinfile:
     path: /etc/sudoers
-    line: debian ALL=(ALL) NOPASSWD:ALL
+    line: "{{ user }} ALL=(ALL) NOPASSWD:ALL"
     create: yes
 
-- name: grant access to debian using current user
+- name: grant access to {{ user }} using current user
   authorized_key:
-    user: debian
+    user: "{{ user }}"
     state: present
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
