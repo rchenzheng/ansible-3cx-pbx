@@ -10,7 +10,7 @@ def define_vm(config, hostname, ip)
   public_key = IO.read(public_key_path)
 
   config.vm.define hostname do |vm|
-      vm.vm.box = "debian/stretch64"
+      vm.vm.box = "debian/buster64"
       vm.vm.hostname = hostname
       vm.vm.network 'private_network', ip: ip
 

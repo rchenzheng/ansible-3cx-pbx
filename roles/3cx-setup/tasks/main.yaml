@@ -6,8 +6,21 @@
       - dphys-swapfile
       - fail2ban
       - unattended-upgrades
+      - apt-transport-https
+      - ca-certificates
+      - gnupg2
+      - software-properties-common
     update_cache: yes
     state: latest
+
+- name: whitelist fail2ban
+  lineinfile:
+    path: /etc/fail2ban/jail.conf
+    regexp: '^#ignoreip'
+    line: 'ignoreip = {{ fail2ban_whitelist }}'
+    backup: yes
+  notify: restart fail2ban
+  when: fail2ban_whitelist
 
 - name: set swappiness to 10 when less than 10% memory left
   sysctl:
