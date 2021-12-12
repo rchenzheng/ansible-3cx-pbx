@@ -43,7 +43,7 @@
 
 - name: add 3cx repo
   apt_repository:
-    repo: deb http://downloads-global.3cx.com/downloads/debian {{ ansible_lsb.codename }} main
+    repo: deb http://downloads-global.3cx.com/downloads/debian {{ ansible_distribution_release }} main
     state: present
 
 - name: install 3cx
