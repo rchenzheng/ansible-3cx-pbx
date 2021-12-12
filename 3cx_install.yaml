@@ -10,7 +10,6 @@
 
 
   tasks:
-  # It is required to install while in the terminal as it's an interactive installation
-  - name: HOW TO INSTALL & SETUP?
+  - name: HOW TO CONFIGURE & SETUP?
     debug:
-      msg: "TO INSTALL and SETUP run `sudo apt install 3cxpbx`"
+      msg: "Access configuration wizard through a browser http://{{ ansible_default_ipv4.address }}:5015"

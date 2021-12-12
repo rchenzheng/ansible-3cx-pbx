@@ -2,8 +2,8 @@
 
 ## Requirements
 - Ansible 2.9+
-- Debian Buster (3CX)
-- Vagrant 2.2.7 (testing)
+- Debian Stretch `debian/stretch64` `V16` or Buster `debian/buster64` `V18`
+- Vagrant 2.2.7+ (testing)
 
 ## Deployment ##
 

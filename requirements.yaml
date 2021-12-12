@@ -1,5 +1,5 @@
 ---
 collections:
   - name: devsec.hardening
-    version: 7.10.0
+    version: 7.13.2
     source: https://galaxy.ansible.com

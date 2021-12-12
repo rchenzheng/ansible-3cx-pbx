@@ -10,7 +10,7 @@ def define_vm(config, hostname, ip)
   public_key = IO.read(public_key_path)
 
   config.vm.define hostname do |vm|
-      vm.vm.box = "debian/buster64"
+      vm.vm.box = "#{ENV['OS']}"
       vm.vm.hostname = hostname
       vm.vm.network 'private_network', ip: ip
 
@@ -19,5 +19,6 @@ def define_vm(config, hostname, ip)
 end
 
 Vagrant.configure("2") do |config|
-  define_vm(config, "3cx-pbx", "10.1.1.254")
+  define_vm(config, "3cx-pbx", "#{ENV['IP']}")
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 end

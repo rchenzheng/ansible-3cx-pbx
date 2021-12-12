@@ -46,6 +46,9 @@
     repo: deb http://downloads-global.3cx.com/downloads/debian {{ ansible_lsb.codename }} main
     state: present
 
-- name: update cache
+- name: install 3cx
   apt:
+    name: 3cxpbx
     update_cache: yes
+    state: latest
+  notify: start 3cx
