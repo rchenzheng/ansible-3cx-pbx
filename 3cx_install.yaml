@@ -12,4 +12,4 @@
   tasks:
   - name: HOW TO CONFIGURE & SETUP?
     debug:
-      msg: "Access configuration wizard through a browser http://{{ ansible_default_ipv4.address }}:5015"
+      msg: "TO INSTALL and SETUP run `sudo apt install 3cxpbx`"

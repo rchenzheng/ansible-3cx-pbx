@@ -3,7 +3,3 @@
   systemd:
     name: fail2ban
     state: restarted
-
-- name: start 3cx
-  command:
-    cmd: /usr/sbin/3CXLaunchWebConfigTool

@@ -10,6 +10,8 @@
       - ca-certificates
       - gnupg2
       - software-properties-common
+      - debconf
+      - debconf-utils
     update_cache: yes
     state: latest
 
@@ -46,9 +48,13 @@
     repo: deb http://downloads-global.3cx.com/downloads/debian {{ ansible_distribution_release }} main
     state: present
 
+- name: accept agreement
+  debconf:
+    name: 3cxpbx
+    question: "3cxpbx/eula"
+    value: 'true'
+    vtype: select
+
 - name: install 3cx
   apt:
-    name: 3cxpbx
     update_cache: yes
-    state: latest
-  notify: start 3cx
